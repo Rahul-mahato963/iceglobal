@@ -92,6 +92,7 @@ import AdminHomeLayout from "./pages/AdminHomeLayout";
 import AdminTeamEditor from "./pages/AdminTeamEditor";
 import AdminTestimonialEditor from "./pages/AdminTestimonialEditor";
 import AdminMediaConfig from "./pages/AdminMediaConfig";
+import AdminIceExhibition from "./pages/AdminIceExhibition";
 import ThemeLoader from "./components/ThemeLoader";
 import { toast } from "@/components/ui/sonner";
 import { ADMIN_SESSION_EXPIRED_EVENT } from "./lib/admin-session";
@@ -99,6 +100,7 @@ import GalleryIndividuals from "./components/GalleryIndividuals";
 import IgenNew from "./components/IgenNew";
 import IgenWorld from "./components/IgenWorld";
 import IgenExpo from "./components/IgenExpo";
+import IceExhibition from "./components/IceExhibition";
 
 const queryClient = new QueryClient();
 
@@ -518,6 +520,14 @@ const App = () => (
             }
           />
           <Route
+            path="/admin/ice-exhibition"
+            element={
+              <AdminGuard>
+                <AdminIceExhibition />
+              </AdminGuard>
+            }
+          />
+          <Route
             path="/admin/buyer-mosaic"
             element={
               <AdminGuard>
@@ -607,6 +617,8 @@ const App = () => (
           <Route path="/Igen News" element={<IgenNew/>}/>
           <Route path="/Igen World" element={<IgenWorld/>}/>
           <Route path="/Igen Expo" element={<IgenExpo/>}/>
+          {/* <Route path="/ice-exhibition" element={<IceExhibition />} /> */}
+          <Route path="/ice-exihibition" element={<IceExhibition />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/gallery/GalleryIndividuals" element={<GalleryIndividuals />} />
       <Route path="/gallery/:id" element={<GalleryDetail />} />

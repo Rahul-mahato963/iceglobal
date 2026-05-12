@@ -371,8 +371,10 @@ export const galleryImages = [
 
 export const navItems = [
   { name: "Home", href: "/" },
-  { name: "Gallery", href: "/gallery" },
-  { name: "About", href: "/about" },
+  { name: "Ice Legacy", href: "/gallery" },
+  { name: "Exhibited At Ice", href: "/about" },
   { name: "Contact", href: "/contact" },
+  { name: "Igen World", href: "/IgenWorld" },
+  { name: "Igen expo", href: "/igenExpo" },
+  { name: "Igen news", href: "/igenNews" },
 ];
-

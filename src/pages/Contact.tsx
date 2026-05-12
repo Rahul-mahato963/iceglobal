@@ -32,15 +32,17 @@ const contactCards: ContactCard[] = [
   {
     icon: "mail",
     title: "Email",
-    value: "hello@ICEglobal.com",
+    value: "info@igenworld.com",
     hint: "We reply within one business day",
   },
   {
     icon: "phone",
     title: "Phone",
-    value: "+91 98765 43210",
+    value: "+91 7090336000,  +91 7090337000,  +91 7090223000, +91 7090224000",
+    
     hint: "Mon–Fri 9:30 AM – 6:30 PM IST",
   },
+  
   {
     icon: "map",
     title: "Head Office",

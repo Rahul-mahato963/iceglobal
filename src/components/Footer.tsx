@@ -131,19 +131,6 @@ const Footer = ({ data }: { data?: FooterData }) => {
               </p>
             </div>
 
-            {/* <div className="flex flex-col sm:flex-row gap-3">
-              <Button asChild variant="hero" size="lg">
-                <a href={data?.partnerHref || "/partner"}>
-                  Become a Partner
-                </a>
-              </Button>
-
-              <Button asChild variant="hero-outline" size="lg">
-                <a href={data?.sponsorHref || "/sponsor"}>
-                  Sponsor an Event
-                </a>
-              </Button>
-            </div> */}
 
    <div className="flex flex-col sm:flex-row gap-3">
   <Button
@@ -227,12 +214,12 @@ className="!bg-[length:100%_100%] !animate-none overflow-hidden antialiased !sha
 
                 <div className="flex items-center gap-3">
                   <Mail className="w-4 h-4 text-primary" />
-                  <span>{data?.contact?.email || "hello@ICEGLOBAL.com"}</span>
+                  <span>{data?.contact?.email || "info@igenworld.com"}</span>
                 </div>
 
                 <div className="flex items-center gap-3">
                   <Phone className="w-4 h-4 text-primary" />
-                  <span>{data?.contact?.phone || "+91 98765 43210"}</span>
+                  <span>{data?.contact?.phone || "+91 7090336000,+91 7090337000,+91 7090223000, +91 7090224000"}</span>
                 </div>
               </div>
             </div>

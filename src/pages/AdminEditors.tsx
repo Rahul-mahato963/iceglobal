@@ -16,6 +16,7 @@ const editors = [
   { name: "Stalls Mosaic", href: "/admin/stalls", desc: "Stalls mosaic images and stats (StallsEditor)." },
   { name: "Buyer Mosaic", href: "/admin/buyer-mosaic", desc: "Buyer mosaic images and stats (BuyerMosaicEditor)." },
   { name: "VVIP Spotlight", href: "/admin/vvips", desc: "VVIP guests and highlights (VvipEditor)." },
+  { name: "ICE Exhibition", href: "/admin/ice-exhibition", desc: "Full ICE Exhibition page content and images." },
   { name: "Sellers", href: "/admin/seller-editor", desc: "Seller signals section (SellerEditor)." },
   { name: "Buyers", href: "/admin/buyer-editor", desc: "Buyer voices section (BuyerEditor)." },
   { name: "Founders Editor", href: "/admin/founder-editor", desc: "Founders spotlight (FoundersEditor)." },

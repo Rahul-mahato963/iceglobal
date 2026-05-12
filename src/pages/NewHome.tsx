@@ -237,12 +237,6 @@ const NewHome = () => {
   const [heroData, setHeroData] = useState<HeroItem[] | null>(null);
 const [heroLoading, setHeroLoading] = useState(true);
   const [navItems, setNavItems] = useState(staticNav);
-  // const [heroContent, setHeroContent] = useState<HeroContent | null>(null);
-//   const [heroContent, setHeroContent] = useState<HeroContent>({
-//   title: "India's Biggest International Consumer Exhibition",
-//   subtitle: "A decade of immersive expos, captured in over 1,000 moments.",
-//   description: "Where brands connect, innovate, and inspire. Explore our visual archive of unforgettable experiences.",
-// });
 const [heroContent, setHeroContent] = useState<HeroContent | null>(null);
   const [reviewData, setReviewData] = useState<ReviewData>({
     eyebrow: "What is ICE Exhibitions",
@@ -800,16 +794,30 @@ const fetchBrands = async () => {
         setDualCtaData((prev) => prev);
       }
     };
+    // const fetchFooter = async () => {
+    //   try {
+    //     const res = await fetch(`${base}/footer`);
+    //     if (!res.ok) throw new Error("Footer fetch failed");
+    //     const data = (await res.json()) as FooterResponse;
+    //     setFooterData(data);
+    //   } catch {
+    //     setFooterData((prev) => prev);
+    //   }
+    // };
     const fetchFooter = async () => {
-      try {
-        const res = await fetch(`${base}/footer`);
-        if (!res.ok) throw new Error("Footer fetch failed");
-        const data = (await res.json()) as FooterResponse;
-        setFooterData(data);
-      } catch {
-        setFooterData((prev) => prev);
-      }
-    };
+  try {
+    const res = await fetch(`${base}/footer`);
+    if (!res.ok) throw new Error("Footer fetch failed");
+
+    const data = await res.json();
+
+    console.log("Footer API:", data); // 👈 ADD THIS
+
+    setFooterData(data.data || data); // 👈 FIX
+  } catch {
+    setFooterData(null);
+  }
+};
     fetchHero();
     fetchReview();
     fetchBrands();
@@ -1044,7 +1052,7 @@ const fetchBrands = async () => {
         title={cofoundersData.title}
         description={cofoundersData.description}
         cofounders={cofoundersData.cofounders}
-        cta={{ label: cofoundersData.ctaLabel || "See all co-founders", href: cofoundersData.ctaHref || "/cofounders" }}
+        cta={{ label: cofoundersData.ctaLabel || "See all OLT members", href: cofoundersData.ctaHref || "/cofounders" }}
       />
     ),
     counts: <CountingSection key="counts" stats={countsData.stats} />,
@@ -1057,7 +1065,7 @@ const fetchBrands = async () => {
 
   return (
     <main className="min-h-screen bg-background ">
-      <FloatingNavbar navItems={navItems} />
+      <FloatingNavbar />
       {renderSections}
     </main>
   );

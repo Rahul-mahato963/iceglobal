@@ -23,7 +23,7 @@ const contactSchema = z.object({
       })
     )
     .default([
-      { icon: "mail", title: "Email", value: "hello@ICEglobal.com", hint: "We reply within one business day" },
+      { icon: "mail", title: "Email", value: "info@igenworld.com", hint: "We reply within one business day" },
       { icon: "phone", title: "Phone", value: "+91 98765 43210", hint: "Mon–Fri, 9:30 AM – 6:30 PM IST" },
       { icon: "map", title: "Studio", value: "Bangalore, India", hint: "Visit by appointment only" },
       { icon: "clock", title: "Turnaround", value: "2–3 days for proposals", hint: "Faster for returning partners" },

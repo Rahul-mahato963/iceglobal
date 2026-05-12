@@ -1,4 +1,7 @@
-version: "3.9"
+
+
+
+# version: "3.9"
 services:
   mongo:
     image: mongo:7
@@ -19,6 +22,25 @@ services:
     command: ["redis-server", "--appendonly", "yes"]
     volumes:
       - redis-data:/data
+
+  backend:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "8086:8086"
+    depends_on:
+      - mongo
+      - redis
+
+  nginx:
+    image: nginx:latest
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - ../nginx/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - backend
 
 volumes:
   mongo-data:
